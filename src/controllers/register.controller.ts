@@ -23,13 +23,17 @@ export const register: Controller<RegisterUser> = async (req, res) => {
       });
 
       if (registeredUser._id) {
-        const { password, ...user } = registeredUser;
-        const token = signToken({ payload: user.userName });
+        const token = signToken({ userName: registeredUser.userName });
 
         return res.send(
           getSuccessResponse<AuthResponse>({
             token,
-            user,
+            user: {
+              firstName: registeredUser.firstName,
+              lastName: registeredUser.lastName,
+              userName: registeredUser.userName,
+              isOnline: registeredUser.isOnline,
+            },
           })
         );
       }

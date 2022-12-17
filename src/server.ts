@@ -4,6 +4,7 @@ import "./models";
 import { connectDB } from "./utils/db.util";
 import { AuthRouter } from "./routes/auth.route";
 import bodyParser from "body-parser";
+import { UserRouter } from "./routes/user.route";
 
 const mountServer = async () => {
   await connectDB();
@@ -15,6 +16,7 @@ const mountServer = async () => {
   app.use(cors());
 
   app.use("/auth", AuthRouter);
+  app.use("/user", UserRouter);
 
   app.listen(port, () => {
     console.log(`⚡️ Server running at http://localhost:${port}`);

@@ -11,17 +11,21 @@ export const login: Controller<LoginCredentials> = async (req, res) => {
     const isPayloadValid = () => userName?.trim() && reqPassword?.trim();
 
     if (isPayloadValid()) {
-      const dbUser = await User.findOne({ userName });
+      const user = await User.findOne({ userName });
 
-      if (dbUser?._id) {
-        if (compareHash(reqPassword, dbUser?.password)) {
-          const { password, ...user } = dbUser;
-          const token = signToken({ payload: user.userName });
+      if (user?._id) {
+        if (compareHash(reqPassword, user?.password)) {
+          const token = signToken({ userName: user.userName });
 
           return res.send(
             getSuccessResponse<AuthResponse>({
               token,
-              user,
+              user: {
+                firstName: user.firstName,
+                lastName: user.lastName,
+                userName: user.userName,
+                isOnline: user.isOnline,
+              },
             })
           );
         }
