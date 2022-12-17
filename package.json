@@ -1,0 +1,42 @@
+{
+  "name": "chat-room-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "engines": {
+    "node": "16.13.2",
+    "npm": "8.1.2"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc",
+    "start-dev": "ts-node src/server.ts",
+    "serve-dev": "dotenv -e environments/.dev.env npm run start-dev",
+    "start-prod": "node dist/server.js",
+    "serve-prod": "dotenv -e environments/.prod.env npm run start-prod",
+    "start": "npm run build && npm run serve-prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misbahkhalilaz/chat-room-api.git"
+  },
+  "author": "Misbah Khalil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misbahkhalilaz/chat-room-api/issues"
+  },
+  "homepage": "https://github.com/misbahkhalilaz/chat-room-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.15",
+    "@types/node": "^18.11.16",
+    "dotenv-cli": "^6.0.0",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
