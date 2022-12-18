@@ -11,6 +11,11 @@ This is a basic realtime chat application with following features:
 # Resources:  
 > Frontend: https://github.com/misbahkhalilaz/chat-room-web. 
 
+# Test Users:  
+> username: `alice`, password: `abc123`  
+> username: `bob`, password: `abc123`  
+> username: `tom`, password: `abc123`  
+
 # Tech Stack:  
 > Node with Typescript.  
 > ExpressJS.  
@@ -18,7 +23,6 @@ This is a basic realtime chat application with following features:
 > Socket.IO.  
 > JWT.  
 
-# How to run on local:  
-> Add `MONGO_DB_URI` in `dev.env`.  
+# How to run on local:   
 > `npm i`.  
 > `npm run local`.  
