@@ -1,6 +1,6 @@
 import { User } from "../models";
 import { Controller } from "../types";
-import { compareHash, hashSecret, signToken } from "../utils/secret.util";
+import { compareHash, signToken } from "../utils/secret.util";
 import { getErrorResponse, getSuccessResponse } from "../utils/response.util";
 import { AuthResponse, LoginCredentials } from "../types/user";
 
