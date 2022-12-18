@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
+  
   "engines": {
     "node": "16.13.2",
     "npm": "8.1.2"
   },
   "scripts": {
-    "dev": "nodemon",
+    "local": "nodemon",
     "build": "tsc",
     "start-dev": "ts-node src/server.ts",
     "serve-dev": "dotenv -e environments/.dev.env npm run start-dev",
