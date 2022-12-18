@@ -3,14 +3,12 @@ import mongoose, { model, Schema } from "mongoose";
 const messageSchema = new Schema(
   {
     message: { type: String, required: true },
-    fromUserId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "users",
+    fromUserName: {
+      type: String,
       required: true,
     },
-    toUserId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "users",
+    toUserName: {
+      type: String,
       required: true,
     },
     isRead: { type: Boolean, required: true, default: false },
